@@ -45,3 +45,10 @@ describe('AppComponent', () => {
     zone.setValue('a'.repeat(200));
     expect(zone.valid).toBeTruthy();
   });
+it('Zone prénom invalide avec aucune valeur', () =>{
+    let errors = {};
+    let zone = component.problemeForm.controls['zonePrenom'];
+    zone.setValue('a'.repeat(0));
+    errors = zone.errors || {};
+    expect(zone.valid).toBeTruthy();
+  });
