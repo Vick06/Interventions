@@ -59,3 +59,10 @@ it('Zone prénom invalide avec aucune valeur', () =>{
     errors = zone.errors || {};
     expect(zone.valid).toBeFalsy();
   });
+ it('Zone prénom valide avec 50 espaces', () =>{
+    let errors = {};
+    let zone = component.problemeForm.controls['zonePrenom'];
+    zone.setValue('a'.repeat(50));
+    errors = zone.errors || {};
+    expect(zone.valid).toBeTruthy();
+  });
