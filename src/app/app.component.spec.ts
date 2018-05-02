@@ -29,3 +29,8 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to Inter!');
   }));
 });
+  it('Zone prénom invalide avec deux caractères', () =>{
+    let zone = component.problemeForm.controls['zonePrenom'];
+    zone.setValue('a'.repeat(2));
+    expect(zone.valid).toBeFalsy();
+  });
