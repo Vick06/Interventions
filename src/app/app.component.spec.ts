@@ -34,3 +34,9 @@ describe('AppComponent', () => {
     zone.setValue('a'.repeat(2));
     expect(zone.valid).toBeFalsy();
   });
+
+  it('Zone prénom valide avec trois caractères', () =>{
+    let zone = component.problemeForm.controls['zonePrenom'];
+    zone.setValue('a'.repeat(3));
+    expect(zone.valid).toBeTruthy();
+  });
