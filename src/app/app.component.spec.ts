@@ -52,3 +52,10 @@ it('Zone prénom invalide avec aucune valeur', () =>{
     errors = zone.errors || {};
     expect(zone.valid).toBeTruthy();
   });
+ it('Zone prénom invalide avec 1 caractères', () =>{
+    let errors = {};
+    let zone = component.problemeForm.controls['zonePrenom'];
+    zone.setValue('a'.repeat(1));
+    errors = zone.errors || {};
+    expect(zone.valid).toBeFalsy();
+  });
